@@ -114,7 +114,7 @@ alias conf="cd ~/.config/nvim"
 alias personal="cd ~/personal"
 alias school="cd ~/school"
 
-
+#FZF section
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
