@@ -1,0 +1,10 @@
+alias act="source .venv/bin/activate"
+alias act="source venv/bin/activate"
+alias py="python3"
+alias vim="nvim"
+alias pass="py ~/.config/pass.py"
+alias conf="cd ~/.config/nvim"
+alias personal="cd ~/personal"
+alias school="cd ~/school"
+
+bindkey -s ^f "tmux-sessionizer\n"

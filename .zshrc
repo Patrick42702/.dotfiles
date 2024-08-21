@@ -101,20 +101,13 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Setting PATH for Python 3.11
 # The original version is saved in .zprofile.pysave
+source ~/.zsh_profile
+
 PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:/usr/local/Cellar/postgresql@16/16.1_3/bin/psql:${PATH}"
 PATH="${PATH}:/opt/nvim"
+PATH="${PATH}:/usr/local/go/bin"
+PATH="${PATH}:$(go env GOPATH)/bin"
 export PATH
-
-alias act="source .venv/bin/activate"
-alias act="source venv/bin/activate"
-alias py="python3"
-alias vim="nvim"
-alias pass="py ~/.config/pass.py"
-alias conf="cd ~/.config/nvim"
-alias personal="cd ~/personal"
-alias school="cd ~/school"
-
-#FZF section
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

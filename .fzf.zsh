@@ -1,10 +1,9 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */Users/patrickmuller/bin* ]]; then
-  PATH="${PATH:+${PATH}:}/Users/patrickmuller/bin"
+if [[ ! "$PATH" == */home/patrick/Downloads/fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}/home/patrick/Downloads/fzf/bin"
 fi
 
 export FZF_CTRL_T_COMMAND='find ~/personal ~/school'
 
-eval "$(fzf --zsh)"
-
+source <(fzf --zsh)
