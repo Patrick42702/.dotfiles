@@ -6,5 +6,6 @@ alias pass="py ~/.config/pass.py"
 alias conf="cd ~/.config/nvim"
 alias personal="cd ~/personal"
 alias school="cd ~/school"
+alias dotfiles="cd ~/.dotfiles"
 
 bindkey -s ^f "tmux-sessionizer\n"
