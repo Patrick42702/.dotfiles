@@ -107,11 +107,9 @@ PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:/usr/local/Cellar/p
 PATH="${PATH}:/opt/nvim"
 PATH="${PATH}:/usr/local/go/bin"
 PATH="${PATH}:$(go env GOPATH)/bin"
-export PATH
+export PATH="$HOME/.local/scripts:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-cd
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
