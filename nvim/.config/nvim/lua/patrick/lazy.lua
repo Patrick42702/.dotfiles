@@ -9,8 +9,13 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   {
-    "github/copilot.vim"
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
   },
+  -- {
+  --   "github/copilot.vim",
+  -- },
   {
     "numToStr/Comment.nvim",
   },
@@ -567,6 +572,7 @@ require("lazy").setup({
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         }),
         sources = {
+          { name = "copilot", group_index = 2 },
           { name = "nvim_lsp" },
           { name = "luasnip" },
           { name = "path" },
