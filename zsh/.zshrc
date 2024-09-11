@@ -107,6 +107,8 @@ PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:/usr/local/Cellar/p
 PATH="${PATH}:/opt/nvim"
 PATH="${PATH}:/usr/local/go/bin"
 PATH="${PATH}:$(go env GOPATH)/bin"
+PATH="${PATH}:/home/patrick/java/jre/bin"
+PATH="${PATH}:$HOME/.local/bin"
 export PATH="$HOME/.local/scripts:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
