@@ -104,12 +104,12 @@ source $ZSH/oh-my-zsh.sh
 source ~/.zsh_profile
 
 PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:/usr/local/Cellar/postgresql@16/16.1_3/bin/psql:${PATH}"
-PATH="${PATH}:/opt/nvim"
 PATH="${PATH}:/usr/local/go/bin"
 PATH="${PATH}:$(go env GOPATH)/bin"
 PATH="${PATH}:/home/patrick/java/jre/bin"
 PATH="${PATH}:$HOME/.local/bin"
 export PATH="$HOME/.local/scripts:$PATH"
+eval "$(zoxide init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
