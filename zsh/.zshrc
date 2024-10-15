@@ -109,6 +109,8 @@ PATH="${PATH}:$(go env GOPATH)/bin"
 PATH="${PATH}:/home/patrick/java/jre/bin"
 PATH="${PATH}:$HOME/.local/bin"
 export PATH="$HOME/.local/scripts:$PATH"
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH=$JAVA_HOME/bin:$PATH
 eval "$(zoxide init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

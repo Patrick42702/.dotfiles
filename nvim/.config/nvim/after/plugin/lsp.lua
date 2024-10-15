@@ -104,7 +104,7 @@ require("lspconfig").clangd.setup({
   settings = {},
 })
 
-require("lspconfig").tsserver.setup({
+require("lspconfig").ts_ls.setup({
   settings = {},
 })
 
