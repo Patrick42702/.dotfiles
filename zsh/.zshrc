@@ -109,11 +109,14 @@ PATH="${PATH}:$(go env GOPATH)/bin"
 PATH="${PATH}:/home/patrick/java/jre/bin"
 PATH="${PATH}:$HOME/.local/bin"
 export PATH="$HOME/.local/scripts:$PATH"
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME='/usr/lib/jvm/java-1.21.0-openjdk-amd64'
 export PATH=$JAVA_HOME/bin:$PATH
+M2_HOME='/opt/apache-maven-3.9.9'
+PATH="$M2_HOME/bin:$PATH"
+export PATH
 eval "$(zoxide init zsh)"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

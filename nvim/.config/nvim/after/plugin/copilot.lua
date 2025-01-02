@@ -1,15 +1,15 @@
-require("copilot").setup({
-    suggestion = {
-        auto_trigger = true,
-        keymap = {
-            -- change these if you want
-            accept = "<C-j>",
-            -- next = "<M-]>",
-            -- prev = "<M-[>",
-            -- dismiss = "<C-]>",
-        },
-    },
-})
+-- require("copilot").setup({
+--     suggestion = {
+--         auto_trigger = true,
+--         keymap = {
+--             -- change these if you want
+--             accept = "<C-j>",
+--             -- next = "<M-]>",
+--             -- prev = "<M-[>",
+--             -- dismiss = "<C-]>",
+--         },
+--     },
+-- })
 
 -- vim.keymap.set('i', '<C-J>', 'copilot#Accept("\\<CR>")', {
 --     expr = true,

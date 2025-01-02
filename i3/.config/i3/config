@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -210,6 +210,7 @@ exec --no-startup-id Gnome-terminal
 exec --no-startup-id discord
 exec --no-startup-id spotify
 exec --no-startup-id gimp
+exec --no-startup-id picom
 
 #assign them to workstations
 assign [class="firefox"] 1
@@ -226,4 +227,4 @@ workspace 4 output DP-4
 workspace 5 output DP-2
 
 # set wallpaper
-exec_always feh --bg-scale /usr/share/backgrounds/ubuntu-default-greyscale-wallpaper.png
+exec_always feh --bg-scale /usr/share/backgrounds/Northan_lights_by_mizuno.webp
