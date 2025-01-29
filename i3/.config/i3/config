@@ -206,7 +206,7 @@ bindsym $mod+Shift+s exec --no-startup-id gnome-screenshot -a
 
 # Start all my applications that I want upon startup
 exec --no-startup-id firefox
-exec --no-startup-id Gnome-terminal
+exec --no-startup-id gnome-terminal
 exec --no-startup-id discord
 exec --no-startup-id spotify
 exec --no-startup-id gimp

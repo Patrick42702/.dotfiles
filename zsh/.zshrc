@@ -114,6 +114,8 @@ export PATH=$JAVA_HOME/bin:$PATH
 M2_HOME='/opt/apache-maven-3.9.9'
 PATH="$M2_HOME/bin:$PATH"
 export PATH
+export VCPKG_ROOT=/home/patrick/Downloads/vcpkg
+export PATH=$VCPKG_ROOT:$PATH
 eval "$(zoxide init zsh)"
 
 source <(fzf --zsh)
