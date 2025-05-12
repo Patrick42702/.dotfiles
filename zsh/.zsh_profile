@@ -13,4 +13,16 @@ alias ls="eza"
 alias ll="eza -alh"
 alias tree="eza --tree"
 
+dcu(){
+    docker compose up "$@"
+}
+
+dcd(){
+    docker compose down "$@"
+}
+
+dcb(){
+    docker compose build "$@"
+}
+
 bindkey -s ^f "tmux-sessionizer\n"
