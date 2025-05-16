@@ -12,6 +12,7 @@ alias cdi="zi"
 alias ls="eza"
 alias ll="eza -alh"
 alias tree="eza --tree"
+alias lg="lazygit"
 
 dcu(){
     docker compose up "$@"
