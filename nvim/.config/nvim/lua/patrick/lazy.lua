@@ -106,6 +106,8 @@ require("lazy").setup({
       nvim_tmux_nav.setup({
         disable_when_zoomed = true, -- defaults to false
       })
+  end
+  },
 	{
 		"stevearc/conform.nvim",
 		opts = {},
