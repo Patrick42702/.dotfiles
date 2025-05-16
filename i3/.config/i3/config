@@ -190,7 +190,7 @@ bar {
 }
 
 # DP-4 is main monitor, DP-0 is second monitor
-bindsym $mod+m move workspace to output DP-4
+bindsym $mod+m move workspace to output DP-2
 bindsym $mod+n move workspace to output DP-0
 
 #merge xrdb with cursor settings 
@@ -202,7 +202,8 @@ for_window [class="^.*"] border pixel 0
 for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577
 
 # bind applications to their workstations upon startup
-bindsym $mod+Shift+s exec --no-startup-id gnome-screenshot -a
+bindsym $mod+Shift+s exec --no-startup-id flameshot gui
+# bindsym $mod+Shift+s exec --no-startup-id notify-send "Hotkey works"
 
 # Start all my applications that I want upon startup
 exec --no-startup-id firefox
@@ -223,8 +224,9 @@ assign [class="Gimp"] 5
 workspace 1 output DP-2
 workspace 2 output DP-2
 workspace 3 output DP-0
-workspace 4 output DP-4
+workspace 4 output DP-2
 workspace 5 output DP-2
 
 # set wallpaper
-exec_always feh --bg-scale /usr/share/backgrounds/Northan_lights_by_mizuno.webp
+exec_always picom
+exec_always feh --bg-scale /usr/share/backgrounds/elden-ring.jpeg

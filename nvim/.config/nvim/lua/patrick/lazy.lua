@@ -106,6 +106,86 @@ require("lazy").setup({
       nvim_tmux_nav.setup({
         disable_when_zoomed = true, -- defaults to false
       })
+	{
+		"stevearc/conform.nvim",
+		opts = {},
+	},
+	{
+		"numToStr/Comment.nvim",
+	},
+	{
+		"linux-cultist/venv-selector.nvim",
+		dependencies = {
+			"neovim/nvim-lspconfig",
+			"mfussenegger/nvim-dap",
+			"mfussenegger/nvim-dap-python", --optional
+			{ "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
+		},
+		lazy = false,
+		branch = "regexp", -- This is the regexp branch, use this for the new version
+		config = function()
+			require("venv-selector").setup()
+		end,
+		keys = {
+			{ ",v", "<cmd>VenvSelect<cr>" },
+		},
+	},
+	{
+		"folke/trouble.nvim",
+		branch = "main", -- IMPORTANT!
+		keys = {
+			{
+				"<leader>xx",
+				"<cmd>Trouble diagnostics toggle<cr>",
+				desc = "Diagnostics (Trouble)",
+			},
+			{
+				"<leader>xX",
+				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+				desc = "Buffer Diagnostics (Trouble)",
+			},
+			{
+				"<leader>cs",
+				"<cmd>Trouble symbols toggle focus=false<cr>",
+				desc = "Symbols (Trouble)",
+			},
+			{
+				"<leader>cl",
+				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+				desc = "LSP Definitions / references / ... (Trouble)",
+			},
+			{
+				"<leader>xL",
+				"<cmd>Trouble loclist toggle<cr>",
+				desc = "Location List (Trouble)",
+			},
+			{
+				"<leader>xQ",
+				"<cmd>Trouble qflist toggle<cr>",
+				desc = "Quickfix List (Trouble)",
+			},
+		},
+		opts = {}, -- for default options, refer to the configuration section for custom setup.
+	},
+	{
+		"kevinhwang91/nvim-ufo",
+		dependencies = {
+			"kevinhwang91/promise-async",
+		},
+	},
+	{
+		"nvim-tree/nvim-web-devicons",
+	},
+	{
+		"tpope/vim-fugitive",
+	},
+	{
+		"mbbill/undotree",
+	},
+	{
+		"alexghergh/nvim-tmux-navigation",
+		config = function()
+			local nvim_tmux_nav = require("nvim-tmux-navigation")
 
       vim.keymap.set("n", "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft)
       vim.keymap.set("n", "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown)
