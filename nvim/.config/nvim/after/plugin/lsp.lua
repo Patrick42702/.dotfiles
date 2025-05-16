@@ -134,3 +134,11 @@ require("lspconfig").jsonls.setup({
   single_file_support = true,
   capabilities = capabilities,
 })
+
+vim.api.nvim_create_user_command("DisableDiagnostics", function()
+  vim.diagnostic.disable(false)
+end, {})
+
+vim.api.nvim_create_user_command("EnableDiagnostics", function()
+  vim.diagnostic.enable(true)
+end, {})
