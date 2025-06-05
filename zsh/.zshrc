@@ -109,8 +109,30 @@ PATH="${PATH}:$(go env GOPATH)/bin"
 PATH="${PATH}:/home/patrick/java/jre/bin"
 PATH="${PATH}:$HOME/.local/bin"
 export PATH="$HOME/.local/scripts:$PATH"
-export JAVA_HOME='/usr/lib/jvm/java-1.21.0-openjdk-amd64'
-export PATH=$JAVA_HOME/bin:$PATH
+# Set JAVA_HOME based on platform
+if [[ "$(uname)" == "Darwin" ]]; then
+  java11() {
+  export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+  export PATH="$JAVA_HOME/bin:$PATH"
+  echo "Switched to Java 11:"
+  java --version
+}
+  java17() {
+  export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+  export PATH="$JAVA_HOME/bin:$PATH"
+  echo "Switched to Java 17:"
+  java --version
+}
+  java23() {
+  export JAVA_HOME=$(/usr/libexec/java_home -v 23)
+  export PATH="$JAVA_HOME/bin:$PATH"
+  echo "Switched to Java 23:"
+  java -version
+}
+elif [[ "$(uname)" == "Linux" ]]; then
+  export JAVA_HOME="/usr/lib/jvm/java-1.21.0-openjdk-amd64"
+fi
+export PATH="$JAVA_HOME/bin:$PATH"
 M2_HOME='/opt/apache-maven-3.9.9'
 PATH="$M2_HOME/bin:$PATH"
 export PATH

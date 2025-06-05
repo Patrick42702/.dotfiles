@@ -7,3 +7,12 @@ export PATH
 # The original version is saved in .zprofile.pysave
 
 [ -e ~/.profile ] && . ~/.profile
+
+##
+# Your previous /Users/patrickmuller/.zprofile file was backed up as /Users/patrickmuller/.zprofile.macports-saved_2025-02-28_at_11:48:05
+##
+
+# MacPorts Installer addition on 2025-02-28_at_11:48:05: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+
