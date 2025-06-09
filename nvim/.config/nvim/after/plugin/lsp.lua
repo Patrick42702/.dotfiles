@@ -19,7 +19,7 @@ cmp.setup({
   mapping = {
     ["<ENTER>"] = cmp.mapping.confirm({ select = false }),
     ["<C-x>"] = cmp.mapping.abort(),
-    ["<Up>"] = cmp.mapping.select_prev_item({ behavior = "select" }),
+    ["<S-Tab>"] = cmp.mapping.select_prev_item({ behavior = "select" }),
     ["<TAB>"] = cmp.mapping.select_next_item({ behavior = "select" }),
     ["<C-p>"] = cmp.mapping(function()
       if cmp.visible() then
