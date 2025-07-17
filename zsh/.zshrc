@@ -129,6 +129,8 @@ if [[ "$(uname)" == "Darwin" ]]; then
   echo "Switched to Java 23:"
   java -version
 }
+  export JAVA_HOME=$(/usr/libexec/java_home -v 17) # set java 17 to the default version for now
+  export PATH="$JAVA_HOME/bin:$PATH"
 elif [[ "$(uname)" == "Linux" ]]; then
   export JAVA_HOME="/usr/lib/jvm/java-1.21.0-openjdk-amd64"
 fi
@@ -143,6 +145,7 @@ export PATH="/usr/local/bin:$PATH"
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 complete -C '/usr/local/bin/aws_completer' aws
+export OLLAMA_HOST="172.17.0.1"
 
 source <(fzf --zsh)
 
@@ -152,3 +155,11 @@ export NVM_DIR="$HOME/.nvm"
 FPATH="$HOME/.docker/completions:$FPATH"
 autoload -Uz compinit
 compinit
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/patrickmuller/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
