@@ -1,5 +1,14 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader>pv", "<CMD>Oil .<CR>")
+vim.keymap.set("n", "<leader>pv", function()
+  local buf_path = vim.api.nvim_buf_get_name(0)
+  if buf_path == "" then
+    require("oil").open()
+  else
+    local dir = vim.fn.fnamemodify(buf_path, ":p:h")
+    require("oil").open(dir)
+  end
+end, { desc = "Open Oil in buffer's directory" })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
