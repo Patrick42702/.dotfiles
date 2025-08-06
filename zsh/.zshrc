@@ -142,24 +142,36 @@ export VCPKG_ROOT=/home/patrick/Downloads/vcpkg
 export PATH=$VCPKG_ROOT:$PATH
 eval "$(zoxide init zsh)"
 export PATH="/usr/local/bin:$PATH"
-autoload bashcompinit && bashcompinit
-autoload -Uz compinit && compinit
-complete -C '/usr/local/bin/aws_completer' aws
-export OLLAMA_HOST="172.17.0.1"
 
+# Docker CLI completions
+fpath=(/Users/patrickmuller/.docker/completions $fpath)
+fpath+=~/.zfunc
+
+# Initialize Zsh completion
+autoload -Uz compinit
+compinit
+
+# Enable Bash-style completions
+autoload -U +X bashcompinit
+bashcompinit
+
+# Minikube completion (MUST come after bashcompinit)
+source ~/.minikube-completion.zsh
+
+# kubectl comp
+source ~/.kubectl-completion.zsh
+
+# Terraform and AWS completions
+complete -o nospace -C /usr/local/bin/terraform terraform
+complete -C '/usr/local/bin/aws_completer' aws
+
+# FZF setup (move this to the bottom)
 source <(fzf --zsh)
 
+# NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-FPATH="$HOME/.docker/completions:$FPATH"
-autoload -Uz compinit
-compinit
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/patrickmuller/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/terraform terraform
+# Other env vars
+export OLLAMA_HOST="0.0.0.0"
