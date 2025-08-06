@@ -28,3 +28,12 @@ telescope.setup({
     },
   },
 })
+
+-- Keymap: <leader>sd to open Telescope in ~/.dotfiles
+vim.keymap.set("n", "<leader>sc", function()
+  require("telescope.builtin").find_files({
+    prompt_title = "Dotfiles",
+    cwd = vim.fn.expand("~/.dotfiles"),
+    hidden = true,
+  })
+end, { desc = "Search Dotfiles" })
