@@ -1,18 +1,27 @@
-require("conform").setup({
+local conform = require("conform")
+
+conform.formatters.black_venv = {
+	command = "venv/bin/black",
+}
+
+conform.formatters.isort_venv = {
+	command = "venv/bin/isort",
+}
+
+conform.formatters.astyle_venv = {
+	command = "venv/bin/astyle",
+}
+
+conform.setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		-- Conform will run multiple formatters sequentially
-		python = {
-			{ command = "venv/bin/black" },
-			{ command = "venv/bin/isort" },
-		},
+		python = { "black_venv", "isort_venv" },
 		-- You can customize some of the format options for the filetype (:help conform.format)
 		rust = { "rustfmt", lsp_format = "fallback" },
 		-- Conform will run the first available formatter
 		javascript = { "prettierd", "prettier", stop_after_first = true },
-		cpp = {
-			{ command = "venv/bin/astyle" },
-		},
+		cpp = { "astyle_venv" },
 	},
 })
 
