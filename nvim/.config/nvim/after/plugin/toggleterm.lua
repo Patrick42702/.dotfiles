@@ -16,19 +16,19 @@ require("toggleterm").setup({
 
 local Terminal = require("toggleterm.terminal").Terminal
 
-local vertical_term = Terminal:new({
-	direction = "vertical",
+local horizontal_term = Terminal:new({
+	direction = "horizontal",
 	hidden = true,
 })
 
-function _toggle_vertical_terminal()
-	vertical_term:toggle()
+function _toggle_horizontal_term()
+	horizontal_term:toggle()
 end
 
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>tv",
-	"<cmd>lua _toggle_vertical_terminal()<CR>",
+	"<cmd>lua _toggle_horizontal_terminal()<CR>",
 	{ noremap = true, silent = true }
 )
 
