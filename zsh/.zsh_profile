@@ -1,5 +1,3 @@
-alias act="source .venv/bin/activate"
-alias act="source venv/bin/activate"
 alias py="python3"
 alias vim="nvim"
 alias pass="${HOME}/venv/bin/python ${HOME}/.config/pass.py"
@@ -13,6 +11,19 @@ alias ls="eza"
 alias ll="eza -alh"
 alias tree="eza --tree"
 alias lg="lazygit"
+
+act() {
+    if [[ -f "./venv/bin/activate" ]]; then
+        source "./venv/bin/activate"
+    elif [[ -f "./.venv/bin/activate" ]]; then
+        source "./.venv/bin/activate"
+    elif [[ -f "$HOME/venv/bin/activate" ]]; then
+        source "$HOME/venv/bin/activate"
+    else
+        echo "No virtual environment found."
+        return 1
+    fi
+}
 
 dcu(){
     docker compose up "$@"
