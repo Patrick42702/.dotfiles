@@ -9,7 +9,6 @@
   /* === Modules Order === */
   "modules-left": [
     "custom/archicon",
-    "clock",
     "cpu",
     "custom/gpupct",
     "memory",
@@ -19,6 +18,7 @@
     "custom/weather"
   ],
   "modules-center": [
+    "clock",
     "hyprland/workspaces"
   ],
   "modules-right": [
@@ -32,12 +32,12 @@
   /* === Modules Left === */
   "custom/archicon": {
     "format": "",
-    "on-click": "rofi --show drun",
+    "on-click": "rofi -show drun",
     "tooltip": false
   },
   "clock": {
     "timezone": "America/New_York",
-    "format": "{:%I:%M %m/%d}",
+    "format": "{:%H:%M %m/%d}",
     "tooltip-format": "{calendar}",
     "calendar": {
       "mode": "month"
@@ -85,9 +85,9 @@
     ]
   },
   "custom/weather": {
-    "interval": 300,
+    "interval": 120,
     "exec": "/home/patrick/venv/bin/python3 /home/patrick/personal/scripts/weather/weather.py",
-    "tooltip-format": "Wappingers Falls, NY"
+    "return-type": "json",
   },
   /* === Modules Center === */
   "hyprland/workspaces": {

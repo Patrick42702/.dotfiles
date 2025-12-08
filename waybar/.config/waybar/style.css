@@ -1,7 +1,7 @@
 /* -- Global rules -- */
 * {
   border: none;
-  font-family: "JetbrainsMono Nerd Font";
+  font-family: "JetBrains Mono";
   font-size: 15px;
   min-height: 10px;
 }
@@ -38,7 +38,12 @@ window#waybar.hidden {
 }
 
 /* Separation to the left */
-#custom-archicon,
+#custom-archicon{
+  margin-left: 5px;
+  border-radius: 10px;
+  padding-left: 16px;
+}
+
 #cpu,
 #idle_inhibitor {
   margin-left: 5px;
@@ -47,7 +52,7 @@ window#waybar.hidden {
 }
 
 /* Separation to the rigth */
-#clock,
+/* #clock, */
 #custom-weather,
 #language {
   margin-right: 5px;
@@ -70,7 +75,10 @@ window#waybar.hidden {
 }
 
 #clock {
-  background: #ABE9B3;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  color: #B5E8E0;
+  font-weight: bold;
 }
 
 #cpu {
