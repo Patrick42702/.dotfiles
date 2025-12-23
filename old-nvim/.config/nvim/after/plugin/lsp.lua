@@ -62,39 +62,31 @@ require("mason").setup({})
 
 require("mason-lspconfig").setup()
 
-local home = os.getenv("HOME")
-local filepath = home .. "/.config/nvim/.pylsp.conf"
-local contents = io.open(filepath, "r"):read("*all")
-contents = string.sub(contents, 0, -2)
-
-require("lspconfig").pylsp.setup({
-  cmd = { contents },
+require("lspconfig").basedpyright.setup({
+  -- General server settings
   settings = {
-    pylsp = {
-      plugins = {
-        pyflakes = { enabled = true }, -- Enable pyflakes
-        pycodestyle = {
-          enabled = true, -- Ensure pycodestyle is enabled
-          ignore = {
-            "W391",
-            "E265",
-            "W293",
-            "E303",
-            "E305",
-            "E302",
-            "E225",
-            "E203",
-            "W291",
-            "E301",
-            "E261",
-            "E231",
-            "E741",
-          },
-          maxLineLength = 120,
+    basedpyright = {
+      -- Configuration options for basedpyright
+      analysis = {
+        diagnosticMode = "openFilesOnly", -- or "workspace" to analyze the entire project
+        typeCheckingMode = "standard", -- or "strict" or "standard"
+        useLibraryCodeForTypes = true,
+        autoSearchPaths = true,
+        inlayHints = {
+          callArgumentNames = true,
         },
       },
+      python = {
+        -- venvPath = "/Users/patrickmuller/venv/",
+        -- venv = "venv",
+      },
     },
+    -- You can also specify the python interpreter path
   },
+  -- Example of setting a local config file path (useful for monorepos)
+  -- on_new_config = function(new_config)
+  --     new_config.settings.basedpyright.configFilePath = "${workspaceFolder}/backend/pyproject.toml"
+  -- end
 })
 
 require("lspconfig").lua_ls.setup({

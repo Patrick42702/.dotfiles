@@ -14,4 +14,9 @@ return {
   keys = {
     { ",v", "<cmd>VenvSelect<cr>" },
   },
+  search = {
+    my_venvs = {
+      command = "fd python$ ~/venv",
+    },
+  },
 }
