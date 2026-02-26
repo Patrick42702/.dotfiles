@@ -175,3 +175,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Other env vars
 export OLLAMA_HOST="0.0.0.0"
+
+# opencode
+export PATH=/Users/patrickmuller/.opencode/bin:$PATH
